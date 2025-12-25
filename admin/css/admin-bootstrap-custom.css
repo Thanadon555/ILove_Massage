@@ -1,0 +1,648 @@
+/* ============================================
+   Bootstrap 5 Custom Theme for Admin Panel
+   ============================================ */
+
+/* ============================================
+   CSS Variables - Brand Colors & Theme
+   ============================================ */
+:root {
+  /* Brand Colors */
+  --bs-primary: #4361ee;
+  --bs-primary-rgb: 67, 97, 238;
+  --bs-secondary: #3f37c9;
+  --bs-secondary-rgb: 63, 55, 201;
+  --bs-success: #06d6a0;
+  --bs-success-rgb: 6, 214, 160;
+  --bs-danger: #ef476f;
+  --bs-danger-rgb: 239, 71, 111;
+  --bs-warning: #ffd166;
+  --bs-warning-rgb: 255, 209, 102;
+  --bs-info: #118ab2;
+  --bs-info-rgb: 17, 138, 178;
+  
+  /* Thai Font Family */
+  --bs-body-font-family: 'Sarabun', 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.6;
+  
+  /* Spacing */
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+  
+  /* Border Radius */
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.375rem;
+  --bs-border-radius-lg: 0.75rem;
+  --bs-border-radius-xl: 1rem;
+  
+  /* Shadows */
+  --bs-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-box-shadow-sm: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05);
+  --bs-box-shadow-lg: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --bs-transition-base: all 0.2s ease-in-out;
+  --bs-transition-fade: opacity 0.15s linear;
+  --bs-transition-collapse: height 0.35s ease;
+}
+
+/* ============================================
+   Body & Typography
+   ============================================ */
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  background-color: #f8f9fa;
+}
+
+/* Thai Font Import from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   Card Enhancements
+   ============================================ */
+.card {
+  border: none;
+  box-shadow: var(--bs-box-shadow);
+  transition: var(--bs-transition-base);
+  border-radius: var(--bs-border-radius);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+.card-header {
+  border-bottom: none;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-footer {
+  border-top: none;
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 1rem 1.25rem;
+}
+
+/* Card with subtle shadow */
+.card-shadow-sm {
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.card-shadow-lg {
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+/* ============================================
+   Gradient Card Headers
+   ============================================ */
+.card-header.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+  color: white;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.card-header.bg-gradient-success {
+  background: linear-gradient(135deg, var(--bs-success), var(--bs-info));
+  color: white;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.card-header.bg-gradient-danger {
+  background: linear-gradient(135deg, var(--bs-danger), var(--bs-warning));
+  color: white;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.card-header.bg-gradient-warning {
+  background: linear-gradient(135deg, var(--bs-warning), #ffb84d);
+  color: #333;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.card-header.bg-gradient-info {
+  background: linear-gradient(135deg, var(--bs-info), var(--bs-primary));
+  color: white;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.card-header.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--bs-secondary), #6c757d);
+  color: white;
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+/* ============================================
+   Statistics Cards
+   ============================================ */
+.stat-card {
+  transition: var(--bs-transition-base);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+.stat-card .card-body {
+  padding: 1.5rem;
+}
+
+.stat-card .stat-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-card .stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ============================================
+   Button Enhancements
+   ============================================ */
+.btn {
+  border-radius: var(--bs-border-radius-sm);
+  font-weight: 500;
+  transition: var(--bs-transition-base);
+  padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   Table Enhancements
+   ============================================ */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-hover tbody tr {
+  transition: background-color 0.15s ease-in-out;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* ============================================
+   Badge Enhancements
+   ============================================ */
+.badge {
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--bs-border-radius-sm);
+}
+
+/* ============================================
+   Alert Enhancements
+   ============================================ */
+.alert {
+  border: none;
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.alert i {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+/* ============================================
+   Modal Enhancements
+   ============================================ */
+.modal-content {
+  border: none;
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 1.5rem;
+}
+
+/* ============================================
+   Form Enhancements
+   ============================================ */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.form-control,
+.form-select {
+  border-radius: var(--bs-border-radius-sm);
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* ============================================
+   Navbar Enhancements
+   ============================================ */
+.navbar {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-link {
+  transition: var(--bs-transition-base);
+  font-weight: 500;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link i {
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+
+.nav-link.active {
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.25rem;
+}
+
+/* Responsive navbar text */
+@media (max-width: 1199.98px) {
+  .nav-link {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .nav-text {
+    display: none;
+  }
+  
+  .nav-link i {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .nav-text {
+    margin-left: 0.25rem;
+  }
+}
+
+/* Mobile navbar improvements */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .nav-text {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+  
+  .nav-link i {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-nav {
+    gap: 0.25rem;
+  }
+}
+
+/* ============================================
+   Dropdown Enhancements
+   ============================================ */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: var(--bs-border-radius);
+}
+
+.dropdown-item {
+  transition: background-color 0.15s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   Pagination Enhancements
+   ============================================ */
+.pagination {
+  margin-bottom: 0;
+}
+
+.page-link {
+  border-radius: var(--bs-border-radius-sm);
+  margin: 0 0.125rem;
+  transition: var(--bs-transition-base);
+}
+
+.page-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   Spinner & Loading States
+   ============================================ */
+.spinner-border,
+.spinner-grow {
+  vertical-align: middle;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-overlay .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Text utilities */
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Background utilities */
+.bg-light-primary {
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+.bg-light-success {
+  background-color: rgba(6, 214, 160, 0.1);
+}
+
+.bg-light-danger {
+  background-color: rgba(239, 71, 111, 0.1);
+}
+
+.bg-light-warning {
+  background-color: rgba(255, 209, 102, 0.1);
+}
+
+.bg-light-info {
+  background-color: rgba(17, 138, 178, 0.1);
+}
+
+/* Border utilities */
+.border-primary {
+  border-color: var(--bs-primary) !important;
+}
+
+.border-success {
+  border-color: var(--bs-success) !important;
+}
+
+.border-danger {
+  border-color: var(--bs-danger) !important;
+}
+
+.border-warning {
+  border-color: var(--bs-warning) !important;
+}
+
+.border-info {
+  border-color: var(--bs-info) !important;
+}
+
+/* ============================================
+   Responsive Utilities
+   ============================================ */
+
+/* Mobile optimizations */
+@media (max-width: 767.98px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .table-responsive {
+    border-radius: var(--bs-border-radius);
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 992px) {
+  .card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+  .navbar,
+  .btn,
+  .alert,
+  .modal,
+  .dropdown {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+  
+  body {
+    background-color: white;
+  }
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bs-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* ============================================
+   Animation Classes
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.3s ease-in-out;
+}
+
+/* ============================================
+   Custom Scrollbar (Webkit browsers)
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,0 +1,40 @@
+/**
+ * Admin Simple CSS - Minimal custom styles for admin panel
+ * Total: < 100 lines
+ */
+
+/* Branding */
+.navbar-brand { font-weight: 600; }
+
+/* Layout */
+.container-fluid { max-width: 1400px; }
+
+/* Utility Classes */
+.cursor-pointer { cursor: pointer; }
+.icon-circle { width: 60px; height: 60px; }
+.avatar-sm { width: 40px; height: 40px; }
+.w-20 { width: 20%; }
+.w-30 { width: 30%; }
+
+/* Contact Message Toggle */
+.contact-message { max-height: 100px; overflow: hidden; transition: max-height 0.3s ease; }
+.contact-message.expanded { max-height: none; }
+.read-more-btn { background: none; border: none; color: #0d6efd; cursor: pointer; font-size: 0.875rem; padding: 0.25rem 0; text-decoration: underline; }
+.read-more-btn:hover { color: #0a58ca; }
+
+/* Image Preview */
+.image-preview { margin-top: 1rem; }
+.image-preview img { border-radius: 0.5rem; }
+
+/* Print Styles */
+@media print {
+    .no-print { display: none !important; }
+    .card { box-shadow: none !important; border: 1px solid #dee2e6 !important; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-dialog { margin: 0.5rem; }
+}
+
+/* End of admin-simple.css */
